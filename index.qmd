@@ -148,7 +148,7 @@ unificado %>%
     table.font.names = c("Inter", "system-ui", "Segoe UI", "Arial"),
     row_group.as_column = FALSE
   ) %>%
-  tab_source_note(md("**Notas**: Los enlaces dirigen a DOI/editores. Adapta los ejemplos y parámetros a tu contexto y preregistro."))
+  tab_source_note(md("**Notas**: Los enlaces dirigen a DOI/URL de cada fuente."))
 ```
 
 ## Uso sugerido en informes
