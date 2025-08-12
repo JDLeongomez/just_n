@@ -1,6 +1,10 @@
 ---
-title: "Marco unificado para justificar tamaños de muestra"
-author: "Juan David Leongómez"
+title: "Marco unificado para justificar tamaños de muestra en estudios cuantitativos, cualitativos, o mixtos"
+author: 
+  name: "[Juan David Leongómez](https://jdleongomez.info/es/)"
+  affiliation:  "[EvoCo: Laboratorio de Evolución y Comportamiento Humano](https://jdleongomez.info/es/team/) | [CODEC: Ciencias Cognitivas y del Comportamiento](https://investigaciones.unbosque.edu.co/codec) | [Facultad de Psicología](https://www.unbosque.edu.co/psicologia) | [Universidad El Bosque](https://www.unbosque.edu.co/)"
+  email: jleongomez@unbosque.edu.co
+  orcid: 0000-0002-0092-6298
 format:
   html:
     theme: cosmo
@@ -14,6 +18,7 @@ execute:
   warning: false
   message: false
 bibliography: marco_unificado_referencias.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/refs/heads/master/apa.csl
 ---
 
 ## Introducción
@@ -118,7 +123,7 @@ cuali <- tibble::tribble(
   "Dimensionar según la profundidad y el propósito analítico más que por un número fijo.",
   "Casos únicos; análisis narrativo; etnografía.",
   "Explicar cómo el número permite comprensión rica y suficiente del fenómeno.",
-  "[Maxwell (2013)](https://us.sagepub.com/en-us/nam/qualitative-research-design/book226602)"
+  "[Maxwell (2013)](https://us.sagepub.com/en-us/nam/qualitative-research-design/book234502)"
 )
 
 unificado <- bind_rows(cuanti, cuali)
@@ -148,4 +153,8 @@ unificado %>%
 
 ## Uso sugerido en informes
 
-El componente cuantitativo justifica su tamaño con poder estadístico y/o precisión de estimaciones [@lakens2022sample]. El componente cualitativo se justifica por saturación teórica, diversidad de perspectivas y acuerdos comunitarios [@guest2006saturation; @patton2015qualitative]. En conjunto, el diseño mixto garantiza tanto validez estadística como profundidad contextual [@creswell2018mixed].
+El componente cuantitativo justifica su tamaño con poder estadístico y/o precisión de estimaciones [@lakens2022sample; ver también @cohen1992power; @bonett2002sample; @pocock1977group; @bacchetti2005ethics; @lakens2018equivalence; @button2013power]. 
+
+El componente cualitativo se justifica por saturación teórica/de datos, diversidad de perspectivas y muestreo intencional guiado por la comunidad [@guest2006saturation; @saunders2018saturation; @patton2015qualitative; @israel2013cbpr], con límites definidos por viabilidad y compromisos éticos acordados localmente [@who2021ethics]. 
+
+En conjunto, el diseño mixto integra lógicas complementarias para garantizar validez estadística y profundidad contextual, articulando criterios de poder/precisión con saturación/diversidad y una justificación narrativa basada en propósito [@creswell2018mixed; @maxwell2013qualitative].
