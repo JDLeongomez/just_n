@@ -1,0 +1,151 @@
+---
+title: "Marco unificado para justificar tamaños de muestra"
+author: "Juan David Leongómez"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    code-fold: show
+    self-contained: true
+lang: es
+execute:
+  echo: false
+  warning: false
+  message: false
+bibliography: marco_unificado_referencias.bib
+---
+
+## Introducción
+
+Este documento resume y unifica estrategias cuantitativas y cualitativas/mixtas para justificar tamaños de muestra, integrando el marco de @lakens2022sample para la parte cuantitativa con criterios ampliamente usados en investigación cualitativa y trabajo comunitario.
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(gt)
+library(stringr)
+```
+
+## Tabla Unificada
+
+```{r}
+# Datos: estrategias cuantitativas (enlaces incluidos)
+cuanti <- tibble::tribble(
+  ~Enfoque, ~Estrategia, ~Descripción, ~`Cuándo usarla`, ~`Cómo justificar`, ~`Referencia / Fuente`,
+  "Cuantitativo",
+  "Poder estadístico (análisis a priori)",
+  "Determinar el tamaño necesario para alcanzar un poder (p. ej., 80%) dado un tamaño de efecto esperado y α.",
+  "Estudios confirmatorios; pruebas de hipótesis clásicas.",
+  "Reportar cálculo con parámetros (α, poder, tamaño de efecto) y el software utilizado.",
+  "[Cohen (1992)](https://doi.org/10.1037/0033-2909.112.1.155); [Lakens (2022)](https://doi.org/10.1525/collabra.33267)",
+
+  "Cuantitativo",
+  "Precisión de estimaciones",
+  "Elegir el tamaño que logra un margen de error e intervalo de confianza deseados para el parámetro.",
+  "Encuestas y estudios descriptivos; estimación de medias/proporciones.",
+  "Justificar el ancho del intervalo de confianza objetivo y mostrar el tamaño que lo alcanza.",
+  "[Lakens (2022)](https://doi.org/10.1525/collabra.33267)",
+
+  "Cuantitativo",
+  "Pruebas secuenciales / diseños adaptativos",
+  "Planificar reglas de detención (futility/eficacia) para evitar tamaños fijos cuando la evidencia sea suficiente.",
+  "Datos costosos o difíciles de obtener; interés en eficiencia.",
+  "Describir el plan secuencial y los límites de detención preespecificados.",
+  "[Pocock (1977)](https://doi.org/10.1093/biomet/64.2.191); [Lakens (2022)](https://doi.org/10.1525/collabra.33267)",
+
+  "Cuantitativo",
+  "Coste–beneficio y recursos disponibles",
+  "Ajustar el tamaño a restricciones prácticas (tiempo, presupuesto, acceso a participantes) manteniendo la validez.",
+  "Pilotos; investigación aplicada con recursos limitados.",
+  "Explicar restricciones y cómo se optimizó el tamaño sin comprometer el objetivo principal.",
+  "Véase discusión en [Lakens (2022)](https://doi.org/10.1525/collabra.33267)",
+
+  "Cuantitativo",
+  "Tamaño mínimo científicamente relevante (SESOI)",
+  "Definir el efecto más pequeño de interés y dimensionar para detectarlo con poder suficiente.",
+  "Ensayos clínicos; estudios aplicados con implicaciones prácticas.",
+  "Declarar y justificar el SESOI; dimensionar para detectarlo (o probar equivalencia).",
+  "[Lakens, Scheel & Isager (2018)](https://doi.org/10.1177/2515245918770963)",
+
+  "Cuantitativo",
+  "Evidencia previa y comparabilidad",
+  "Elegir tamaños comparables a estudios previos para facilitar síntesis e interpretación conjunta.",
+  "Replicaciones; series de estudios comparativos.",
+  "Citar trabajos previos y justificar la comparabilidad del tamaño.",
+  "Discusión en [Button et al. (2013)](https://doi.org/10.1038/nrn3475); [Lakens (2022)](https://doi.org/10.1525/collabra.33267)"
+)
+
+# Datos: estrategias cualitativas / mixtas (enlaces incluidos)
+cuali <- tibble::tribble(
+  ~Enfoque, ~Estrategia, ~Descripción, ~`Cuándo usarla`, ~`Cómo justificar`, ~`Referencia / Fuente`,
+  "Cualitativo / Mixto",
+  "Saturación teórica o de datos",
+  "Continuar hasta que no emerjan nuevos temas/códigos/categorías relevantes.",
+  "Exploratorios; teoría fundamentada; análisis temático.",
+  "Describir evaluación iterativa de saturación y criterios de cierre.",
+  "[Guest, Bunce & Johnson (2006)](https://doi.org/10.1177/1525822X05279903); [Saunders et al. (2018)](https://doi.org/10.1007/s11135-017-0574-8)",
+
+  "Cualitativo / Mixto",
+  "Diversidad y representatividad de perspectivas",
+  "Incluir voces/experiencias diversas (género, edad, rol, territorio, etc.).",
+  "Múltiples subgrupos o actores clave.",
+  "Especificar cuotas por subgrupo y cómo garantizan diversidad suficiente.",
+  "[Patton (2015)](https://us.sagepub.com/en-us/nam/qualitative-research-evaluation-methods/book232962)",
+
+  "Cualitativo / Mixto",
+  "Muestreo intencional guiado por la comunidad",
+  "Selección deliberada basada en acuerdos y criterios de relevancia local.",
+  "Investigación participativa; estudios comunitarios.",
+  "Explicar cómo los casos críticos fueron identificados por la comunidad.",
+  "[Israel et al. (2013)](https://www.wiley.com/en-us/Methods+for+Community-Based+Participatory+Research+for+Health%2C+2nd+Edition-p-9781118021866)",
+
+  "Cualitativo / Mixto",
+  "Viabilidad y compromisos éticos",
+  "Dimensionar evitando sobrecarga y protegiendo bienestar/privacidad, según acuerdos locales.",
+  "Contextos con comunidades vulnerables o recursos limitados.",
+  "Indicar límites consensuados y principios éticos que los sustentan.",
+  "Orientaciones OMS: p. ej., [Ethics guidance](https://www.who.int/teams/health-ethics-governance)",
+
+  "Cualitativo / Mixto",
+  "Complementariedad en diseños mixtos",
+  "Integrar criterios cuanti y cuali para responder la misma pregunta desde lógicas distintas.",
+  "Diseños mixtos (cuanti–cuali).",
+  "Mostrar cómo cada parte sigue criterios adecuados (poder/saturación/diversidad).",
+  "[Creswell & Plano Clark (2018)](https://us.sagepub.com/en-us/nam/designing-and-conducting-mixed-methods-research/book241842)",
+
+  "Cualitativo / Mixto",
+  "Justificación narrativa basada en propósito",
+  "Dimensionar según la profundidad y el propósito analítico más que por un número fijo.",
+  "Casos únicos; análisis narrativo; etnografía.",
+  "Explicar cómo el número permite comprensión rica y suficiente del fenómeno.",
+  "[Maxwell (2013)](https://us.sagepub.com/en-us/nam/qualitative-research-design/book226602)"
+)
+
+unificado <- bind_rows(cuanti, cuali)
+
+unificado %>%
+  arrange(desc(Enfoque)) %>%  # para mostrar primero cuanti y luego cuali/mixto o al gusto
+  gt(groupname_col = "Enfoque") %>%
+  tab_header(
+    title = md("**Marco unificado de estrategias para justificar tamaños de muestra**"),
+    subtitle = "Resumen práctico para estudios cuantitativos, cualitativos y mixtos"
+  ) %>%
+  fmt_markdown(columns = "Referencia / Fuente") %>%
+  cols_width(
+    Enfoque ~ px(160),
+    Estrategia ~ px(260),
+    `Cuándo usarla` ~ px(260),
+    `Cómo justificar` ~ px(300),
+    everything() ~ px(320)
+  ) %>%
+  cols_align(align = "left", columns = everything()) %>%
+  tab_options(
+    table.font.names = c("Inter", "system-ui", "Segoe UI", "Arial"),
+    row_group.as_column = FALSE
+  ) %>%
+  tab_source_note(md("**Notas**: Los enlaces dirigen a DOI/editores. Adapta los ejemplos y parámetros a tu contexto y preregistro."))
+```
+
+## Uso sugerido en informes
+
+El componente cuantitativo justifica su tamaño con poder estadístico y/o precisión de estimaciones [@lakens2022sample]. El componente cualitativo se justifica por saturación teórica, diversidad de perspectivas y acuerdos comunitarios [@guest2006saturation; @patton2015qualitative]. En conjunto, el diseño mixto garantiza tanto validez estadística como profundidad contextual [@creswell2018mixed].
