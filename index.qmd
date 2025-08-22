@@ -141,7 +141,6 @@ unificado %>%
     subtitle = "Resumen práctico para estudios cuantitativos, cualitativos y mixtos"
   ) %>%
   fmt_markdown(columns = "Referencia / Fuente") %>%
-  # ⬇️ Ajustes clave de ancho (porcentuales) y fuente/padding
   cols_width(
     Enfoque ~ pct(12),
     Estrategia ~ pct(18),
@@ -152,10 +151,18 @@ unificado %>%
   cols_align(align = "left", columns = everything()) %>%
   tab_options(
     table.width = pct(100),
-    table.font.size = px(15),        # antes 16–17 aprox; 15 ayuda a compactar
-    data_row.padding = px(4),        # reduce alto de filas
+    table.font.size = px(15),
+    data_row.padding = px(4),
     row_group.padding = px(4),
     heading.padding = px(6)
+  ) %>%
+  # ⬇️ Estilo para los encabezados de grupo
+  tab_style(
+    style = list(
+      cell_fill(color = "#e6f2ff"),      # color de fondo suave (azul claro)
+      cell_text(weight = "bold", size = px(16), color = "#003366") # texto más grande y oscuro
+    ),
+    locations = cells_row_groups()
   ) %>%
   tab_source_note(md("**Notas**: Los enlaces dirigen a DOI/URL de cada fuente."))
 ```
