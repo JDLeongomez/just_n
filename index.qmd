@@ -1,5 +1,6 @@
 ---
 title: "Marco unificado para justificar tamaños de muestra en estudios cuantitativos, cualitativos, o mixtos"
+subtitle: "Última actualización: {{< meta date-modified >}} — Versión {{< meta version >}}"
 author: 
   name: "[Juan David Leongómez](https://jdleongomez.info/es/)"
   affiliation:  "[EvoCo: Laboratorio de Evolución y Comportamiento Humano](https://jdleongomez.info/es/team/) | [CODEC: Ciencias Cognitivas y del Comportamiento](https://investigaciones.unbosque.edu.co/codec) | [Facultad de Psicología](https://www.unbosque.edu.co/psicologia) | [Universidad El Bosque](https://www.unbosque.edu.co/)"
@@ -9,6 +10,7 @@ date: 2025-08-12
 date-format: "D [de] MMMM [de] YYYY"
 date-modified: last-modified
 date-modified-format: "D [de] MMMM [de] YYYY"
+version: "v1.1"
 format:
   html:
     theme: cosmo
@@ -29,6 +31,8 @@ csl: https://raw.githubusercontent.com/citation-style-language/styles-distributi
 ## Introducción
 
 Este documento resume y unifica estrategias cuantitativas y cualitativas/mixtas para justificar tamaños de muestra, integrando el marco de @lakens2022sample para la parte cuantitativa con criterios ampliamente usados en investigación cualitativa y trabajo comunitario.
+
+No pretende ser una revisión exhaustiva de todas las fuentes disponibles, sino destacar referencias de particular relevancia que puedan orientar a las y los investigadores a **decidir**, **aplicar** y **justificar** la estrategia más adecuada según el tipo de estudio y sus objetivos.
 
 ```{r setup, include=FALSE}
 library(dplyr)
