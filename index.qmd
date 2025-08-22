@@ -5,6 +5,10 @@ author:
   affiliation:  "[EvoCo: Laboratorio de Evolución y Comportamiento Humano](https://jdleongomez.info/es/team/) | [CODEC: Ciencias Cognitivas y del Comportamiento](https://investigaciones.unbosque.edu.co/codec) | [Facultad de Psicología](https://www.unbosque.edu.co/psicologia) | [Universidad El Bosque](https://www.unbosque.edu.co/)"
   email: jleongomez@unbosque.edu.co
   orcid: 0000-0002-0092-6298
+date: 2025-08-12
+date-format: "D [de] MMMM [de] YYYY"
+date-modified: last-modified
+date-modified-format: "D [de] MMMM [de] YYYY"
 format:
   html:
     theme: cosmo
@@ -20,6 +24,7 @@ execute:
 bibliography: marco_unificado_referencias.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/refs/heads/master/apa.csl
 ---
+
 
 ## Introducción
 
@@ -129,24 +134,28 @@ cuali <- tibble::tribble(
 unificado <- bind_rows(cuanti, cuali)
 
 unificado %>%
-  arrange(desc(Enfoque)) %>%  # para mostrar primero cuanti y luego cuali/mixto o al gusto
+  arrange(desc(Enfoque)) %>%
   gt(groupname_col = "Enfoque") %>%
   tab_header(
     title = md("**Marco unificado de estrategias para justificar tamaños de muestra**"),
     subtitle = "Resumen práctico para estudios cuantitativos, cualitativos y mixtos"
   ) %>%
   fmt_markdown(columns = "Referencia / Fuente") %>%
+  # ⬇️ Ajustes clave de ancho (porcentuales) y fuente/padding
   cols_width(
-    Enfoque ~ px(160),
-    Estrategia ~ px(260),
-    `Cuándo usarla` ~ px(260),
-    `Cómo justificar` ~ px(300),
-    everything() ~ px(320)
+    Enfoque ~ pct(12),
+    Estrategia ~ pct(18),
+    `Cuándo usarla` ~ pct(22),
+    `Cómo justificar` ~ pct(28),
+    `Referencia / Fuente` ~ pct(20)
   ) %>%
   cols_align(align = "left", columns = everything()) %>%
   tab_options(
-    table.font.names = c("Inter", "system-ui", "Segoe UI", "Arial"),
-    row_group.as_column = FALSE
+    table.width = pct(100),
+    table.font.size = px(15),        # antes 16–17 aprox; 15 ayuda a compactar
+    data_row.padding = px(4),        # reduce alto de filas
+    row_group.padding = px(4),
+    heading.padding = px(6)
   ) %>%
   tab_source_note(md("**Notas**: Los enlaces dirigen a DOI/URL de cada fuente."))
 ```
@@ -158,3 +167,10 @@ El componente cuantitativo justifica su tamaño con poder estadístico y/o preci
 El componente cualitativo se justifica por saturación teórica/de datos, diversidad de perspectivas y muestreo intencional guiado por la comunidad [@guest2006saturation; @saunders2018saturation; @patton2015qualitative; @israel2013cbpr], con límites definidos por viabilidad y compromisos éticos acordados localmente [@who2021ethics]. 
 
 En conjunto, el diseño mixto integra lógicas complementarias para garantizar validez estadística y profundidad contextual, articulando criterios de poder/precisión con saturación/diversidad y una justificación narrativa basada en propósito [@creswell2018mixed; @maxwell2013qualitative].
+
+::: callout-note
+## Documento vivo
+
+Este es un documento **vivo** que puede ser actualizado o refinado con el tiempo.  
+Si encuentras errores, tienes bibliografía pertinente o cualquier sugerencia de mejora, por favor escríbeme a <jleongomez@unbosque.edu.co>.
+:::
