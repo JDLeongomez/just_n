@@ -4,50 +4,46 @@
 
 # Just-N Framework
 
-**Just-N Framework** reúne y presenta un **marco unificado** para justificar tamaños de muestra en **investigaciones cuantitativas**, **cualitativas** y **mixtas**, integrando:
+*Marco unificado para justificar tamaños de muestra en estudios cuantitativos, cualitativos y mixtos*  
+*A unified framework to justify sample sizes in quantitative, qualitative, and mixed-methods studies*  
 
-- Estrategias cuantitativas adaptadas de Lakens ([2022](https://online.ucpress.edu/collabra/article/8/1/33267/120491/Sample-Size-Justification)) y otras fuentes.
-- Estrategias cualitativas y mixtas basadas en criterios de saturación, diversidad y lógicas comunitarias.
-
-Es un proyecto en curso (*documento vivo*) que será actualizado o refinado con el tiempo.
-
----
-
-**Just-N Framework** brings together and presents a **unified framework** to justify sample sizes in **quantitative**, **qualitative**, and **mixed-methods** research, integrating:
-
-- Quantitative strategies adapted from Lakens ([2022](https://online.ucpress.edu/collabra/article/8/1/33267/120491/Sample-Size-Justification)) and other classical sources.  
-- Qualitative and mixed-methods strategies based on criteria of saturation, diversity, and community logics.
-
-It is a work in progress (*living document*), intended to be updated and refined over time.
+[![](https://zenodo.org/badge/DOI/10.5281/zenodo.16934469.svg)](https://doi.org/10.5281/zenodo.16934469)  
+DOI (concept DOI): [10.5281/zenodo.16934469](https://doi.org/10.5281/zenodo.16934469)
 
 ---
 
-## Repository contents / Contenido del repositorio
+## Acerca del proyecto / About
 
-- `marco-unificado.qmd` — Main Quarto document.  
-- `marco_unificado_referencias.bib` — BibLaTeX file with all cited references.  
+**Just-N Framework** integra:  
+- Estrategias cuantitativas clásicas (p. ej., análisis de poder, estimación por precisión, SESOI).  
+- Estrategias cualitativas y mixtas (p. ej., saturación, diversidad de perspectivas, muestreo participativo, viabilidad ética).  
+
+**Just-N Framework** integrates:  
+- Classical quantitative strategies (e.g., power analysis, precision-based estimation, SESOI).  
+- Qualitative and mixed-methods strategies (e.g., saturation, diversity of perspectives, participatory sampling, ethical feasibility).  
+
+Es un proyecto en curso (*documento vivo*), que se actualizará y refinará con el tiempo.  
+It is a work in progress (*living document*), intended to be updated and refined over time.  
 
 ---
 
-## View online / Ver en línea
+## Ver en línea / View online
 
 🔗 **[Just-N Framework (GitHub Pages)](https://jdleongomez.github.io/just_n/)**
 
 ---
 
-## How to cite / Cómo citar
+## Cómo citar / How to cite
 
-If you use the **Just-N Framework** in your work, please cite it as:
+**Español**  
+Leongómez, J. D. (2025). *Just-N Framework: Marco unificado para justificar tamaños de muestra en estudios cuantitativos, cualitativos y mixtos* (v1.2). Zenodo. [https://doi.org/10.5281/zenodo.16934469](https://doi.org/10.5281/zenodo.16934469)
 
-> Leongómez, J. D. (2025). *Just-N Framework: Unified framework to justify sample sizes in quantitative, qualitative, and mixed-methods studies* (v1.2). Zenodo. [https://doi.org/10.5281/zenodo.16934469](https://doi.org/10.5281/zenodo.16934469)
-
-Si utilizas **Just-N Framework** en tu trabajo, por favor cítalo así:
-
-> Leongómez, J. D. (2025). *Just-N Framework: Marco unificado para justificar tamaños de muestra en estudios cuantitativos, cualitativos y mixtos* (v1.2). Zenodo. [https://doi.org/10.5281/zenodo.16934469](https://doi.org/10.5281/zenodo.16934469)
+**English**  
+Leongómez, J. D. (2025). *Just-N Framework: Unified framework to justify sample sizes in quantitative, qualitative, and mixed-methods studies* (v1.2). Zenodo. [https://doi.org/10.5281/zenodo.16934469](https://doi.org/10.5281/zenodo.16934469)
 
 ---
 
-## License / Licencia
+## Licencia / License
 
-- Text / Contenido: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
-- Code / Código: [MIT](https://opensource.org/licenses/MIT)
+- Contenido / Text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
+- Código / Code: [MIT](https://opensource.org/licenses/MIT)
