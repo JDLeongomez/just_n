@@ -3,7 +3,7 @@ project:
   output-dir: docs   # GitHub Pages publicará desde /docs
 
 website:
-  title: "Justificación de tamaños de muestra"
+  title: "Just-N Framework"
   navbar:
     style: tab
     left:
