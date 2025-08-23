@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs   # GitHub Pages publicará desde /docs
+
+website:
+  title: "Justificación de tamaños de muestra"
+  navbar:
+    style: tab
+    left:
+      - text: "Español"
+        href: index.qmd
+      - text: "English"
+        href: en/index.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    self-contained: true
+
+lang: es

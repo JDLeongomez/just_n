@@ -1,0 +1,201 @@
+---
+title: "Unified framework to justify sample sizes in quantitative, qualitative, and mixed-methods studies"
+subtitle: "Last updated: {{< meta date-modified >}} — Version {{< meta version >}}"
+author: 
+  name: "[Juan David Leongómez](https://jdleongomez.info/es/)"
+  affiliation:  "[EvoCo: Human Behaviour and Evolution Lab](https://jdleongomez.info/es/team/) | [CODEC: Cognitive and Behavioural Sciences](https://unbosque.portalinvestigacion.com/grupos/302) | [Faculty of Psychology](https://www.unbosque.edu.co/psicologia) | [Universidad El Bosque](https://www.unbosque.edu.co/)"
+  email: jleongomez@unbosque.edu.co
+  orcid: 0000-0002-0092-6298
+date: 2025-08-12
+date-format: "D [de] MMMM [de] YYYY"
+date-modified: last-modified
+date-modified-format: "D [de] MMMM [de] YYYY"
+version: "v1.2"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    code-fold: show
+    self-contained: true
+lang: en
+execute:
+  echo: false
+  warning: false
+  message: false
+bibliography: ../marco_unificado_referencias.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/refs/heads/master/apa.csl
+---
+
+## Introduction
+
+This document summarises and unifies quantitative and qualitative/mixed-method strategies for justifying sample sizes, integrating the framework of @lakens2022sample for the quantitative part with criteria widely used in qualitative research and community-based work.
+
+It is not intended to be an exhaustive review of all available sources, but rather to highlight references of particular relevance that can guide researchers to **decide**, **apply**, and **justify** the most appropriate strategy depending on the type of study and its objectives.
+
+In all cases, this framework emphasises that what is fundamental is methodological transparency: even when it is not possible to apply a strong justification, declaring how the sample size was decided remains essential.
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(gt)
+library(stringr)
+```
+
+## Unified Table
+
+```{r}
+# --- QUANTITATIVE STRATEGIES ---
+cuanti <- tibble::tribble(
+  ~Approach, ~Strategy, ~Description, ~`When to use`, ~`How to justify`, ~`Reference / Source`,
+  "Quantitative",
+  "Statistical power (a priori analysis)",
+  "Determine the required sample size to reach a given power (e.g., 80%) for an expected effect size and α.",
+  "Confirmatory studies; classical hypothesis testing.",
+  "Report calculation with parameters (α, power, effect size) and the software used.",
+  "[@cohen1992power; @lakens2022sample]",
+
+  "Quantitative",
+  "Precision of estimates",
+  "Choose the sample size that achieves a desired margin of error and confidence interval for the parameter.",
+  "Surveys and descriptive studies; estimation of means/proportions.",
+  "Justify the target confidence interval width and show the sample size that achieves it.",
+  "[@lakens2022sample]",
+
+  "Quantitative",
+  "Sequential testing / adaptive designs",
+  "Plan stopping rules (futility/efficacy) to avoid fixed sizes when evidence is sufficient.",
+  "Costly or difficult-to-obtain data; interest in efficiency.",
+  "Describe the sequential plan and pre-specified stopping boundaries.",
+  "[@pocock1977group; @lakens2022sample]",
+
+  "Quantitative",
+  "Cost–benefit and available resources",
+  "Adjust the sample size to practical constraints (time, budget, access to participants) while maintaining validity.",
+  "Pilot studies; applied research with limited resources.",
+  "Explain constraints and how the size was optimised without compromising the main goal.",
+  "[@bacchetti2005ethics; @lakens2022sample]",
+
+  "Quantitative",
+  "Smallest Effect Size of Interest (SESOI)",
+  "Define the smallest effect of interest and power the study to detect it adequately.",
+  "Clinical trials; applied studies with practical implications.",
+  "Declare and justify the SESOI; power the study to detect it (or test equivalence).",
+  "[@lakens2018equivalence]",
+
+  "Quantitative",
+  "Prior evidence and comparability",
+  "Choose sample sizes comparable to previous studies to facilitate synthesis and joint interpretation.",
+  "Replications; series of comparative studies.",
+  "Cite previous work and justify the comparability of the size.",
+  "[@button2013power; @lakens2022sample]"
+)
+
+# --- QUALITATIVE / MIXED-METHODS STRATEGIES ---
+cuali <- tibble::tribble(
+  ~Approach, ~Strategy, ~Description, ~`When to use`, ~`How to justify`, ~`Reference / Source`,
+  "Qualitative / Mixed",
+  "Theoretical or data saturation",
+  "Continue until no new themes/codes/categories of relevance emerge.",
+  "Exploratory studies; grounded theory; thematic analysis.",
+  "Describe iterative evaluation of saturation and closure criteria.",
+  "[@guest2006saturation; @Hennink2021Sample; @saunders2018saturation; @Wutich2024Sample]",
+
+  "Qualitative / Mixed",
+  "Diversity and representativeness of perspectives",
+  "Include diverse voices/experiences (gender, age, role, territory, etc.).",
+  "Multiple subgroups or key stakeholders.",
+  "Specify quotas per subgroup and how these ensure sufficient diversity.",
+  "[@patton2015qualitative; @Zabala2016Bootstrapping]",
+
+  "Qualitative / Mixed",
+  "Community-guided purposive sampling",
+  "Deliberate selection based on agreements and locally relevant criteria.",
+  "Participatory research; community studies.",
+  "Explain how critical cases were identified by the community.",
+  "[@israel2013cbpr; @Hearn2022Having; @Pelletier2020Exploring]",
+
+  "Qualitative / Mixed",
+  "Feasibility and ethical commitments",
+  "Size samples to avoid overburdening and protect wellbeing/privacy, according to local agreements.",
+  "Contexts with vulnerable communities or limited resources.",
+  "Indicate consensual limits and the ethical principles underlying them.",
+  "[@who2021ethics; @Robinson2014Sampling; @Farrugia2019WASP; @Taquette2022Ethical]",
+
+  "Qualitative / Mixed",
+  "Complementarity in mixed-method designs",
+  "Integrate quantitative and qualitative criteria to answer the same question from different logics.",
+  "Mixed-method (quant–qual) designs.",
+  "Show how each part follows adequate criteria (power/saturation/diversity).",
+  "[@creswell2018mixed; @Teddlie2016Mixed; @Javdani2023Mixed]",
+
+  "Qualitative / Mixed",
+  "Narrative justification based on purpose",
+  "Size according to analytical depth and purpose rather than a fixed number.",
+  "Single-case studies; narrative analysis; ethnography.",
+  "Explain how the number allows a rich and sufficient understanding of the phenomenon.",
+  "[@maxwell2013qualitative; @Flowerree2023Reasoning; @Imaz-Sheinbaum2021PRINCIPLES]"
+)
+
+unificado <- bind_rows(cuanti, cuali)
+
+unificado %>%
+  arrange(desc(Approach)) %>%
+  gt(groupname_col = "Approach") %>%
+  tab_header(
+    title = md("**Unified framework of strategies for justifying sample sizes**"),
+    subtitle = "Practical summary for quantitative, qualitative, and mixed-methods studies"
+  ) %>%
+  fmt_markdown(columns = "Reference / Source") %>%
+  cols_width(
+    Approach ~ pct(12),
+    Strategy ~ pct(18),
+    `When to use` ~ pct(22),
+    `How to justify` ~ pct(28),
+    `Reference / Source` ~ pct(20)
+  ) %>%
+  cols_align(align = "left", columns = everything()) %>%
+  tab_options(
+    table.width = pct(100),
+    table.font.size = px(15),
+    data_row.padding = px(4),
+    row_group.padding = px(4),
+    heading.padding = px(6)
+  ) %>%
+  # ⬇️ Style for group headers
+  tab_style(
+    style = list(
+      cell_fill(color = "#e6f2ff"),      
+      cell_text(weight = "bold", size = px(16), color = "#003366")
+    ),
+    locations = cells_row_groups()
+  ) %>%
+  tab_source_note(md("**Notes**: Links point to DOI/URL of each source."))
+```
+
+::: callout-tip
+### Other possible justificationss
+@lakens2022sample also describes less common justifications, such as measuring the entire population, or less desirable ones such as limiting sample size due to resources (which is often understandable in many contexts), or even using heuristic rules or not having a formal justification at all.
+
+Although they are not recommended as standard practice, it is important to promote transparency: even when a sample size is defined only by general rules or lacks justification, making this explicit helps readers and reviewers understand the decisions made and their implications. As @lakens2022sample emphasises: *“It should not be surprising that the ‘heuristics’ and ‘no justification’ approaches are often unlikely to impress peers”* .
+
+**None of these options replace the need to transparently argue how the decision about sample size was made**.
+:::
+
+## Suggested use in projectss
+
+The decision about sample size or the selection strategy should be taken *a priori*, before collecting data, and be based on clear theoretical or methodological considerations. Depending on the type of research, it can be justified through different strategies:
+
+* **In quantitative studies**, in most cases the most advisable approach is to justify the sample size through statistical power and/or precision of estimates [@lakens2022sample; see also @cohen1992power; @bonett2002sample; @pocock1977group; @bacchetti2005ethics; @lakens2018equivalence; @button2013power]. For statistical power, this requires estimating an expected effect size. Some common strategies are problematic: for example, relying on Cohen’s generic standards (“small”, “medium”, or “large” effects) [@correllAvoidCohenSmall2020], or using the effect size of a single previous study or a pilot study [@albersWhenPowerAnalyses2018]. A more robust alternative is to consider the distribution of effect sizes in a field [@quintanaStatisticalConsiderationsReporting2017], although ideally one should explicitly define a *Smallest Effect Size of Interest* (SESOI) [@lakens2018equivalence], or, failing that, justify a hypothesised effect based on theory.
+
+* **In qualitative studies**, the sample is mainly justified by theoretical/data saturation, diversity of perspectives, and community-guided purposive sampling [@guest2006saturation; @saunders2018saturation; @patton2015qualitative; @maxwell2013qualitative; @israel2013cbpr; @Hennink2021Sample; @Hearn2022Having; @Pelletier2020Exploring; @Wutich2024Sample; @Zabala2016Bootstrapping; @Flowerree2023Reasoning; @Imaz-Sheinbaum2021PRINCIPLES], with limits defined by feasibility and locally agreed ethical commitments [@who2021ethics; @Robinson2014Sampling; @Farrugia2019WASP; @Taquette2022Ethical].
+
+* **In mixed-method designs**, complementary criteria are integrated to ensure both statistical validity and contextual depth, articulating power and precision with saturation, diversity, and narrative justification based on purpose [@creswell2018mixed; @Teddlie2016Mixed; @Javdani2023Mixed].
+
+Finally, if the sample size was determined by practical limitations or lacks a clear justification, it is essential to report this honestly. Transparency, even in these circumstances, allows a realistic evaluation of the scope and limitations of the study [@lakens2022sample].
+
+::: callout-note
+## Living document
+
+This is a **living** document that may be updated or refined over time.
+If you find errors, have relevant literature, or any suggestions for improvement, please write to me at <jleongomez@unbosque.edu.co>.
+:::

@@ -3,14 +3,14 @@ title: "Marco unificado para justificar tamaños de muestra en estudios cuantita
 subtitle: "Última actualización: {{< meta date-modified >}} — Versión {{< meta version >}}"
 author: 
   name: "[Juan David Leongómez](https://jdleongomez.info/es/)"
-  affiliation:  "[EvoCo: Laboratorio de Evolución y Comportamiento Humano](https://jdleongomez.info/es/team/) | [CODEC: Ciencias Cognitivas y del Comportamiento](https://investigaciones.unbosque.edu.co/codec) | [Facultad de Psicología](https://www.unbosque.edu.co/psicologia) | [Universidad El Bosque](https://www.unbosque.edu.co/)"
+  affiliation:  "[EvoCo: Laboratorio de Evolución y Comportamiento Humano](https://jdleongomez.info/es/team/) | [CODEC: Ciencias Cognitivas y del Comportamiento](https://unbosque.portalinvestigacion.com/grupos/302) | [Facultad de Psicología](https://www.unbosque.edu.co/psicologia) | [Universidad El Bosque](https://www.unbosque.edu.co/)"
   email: jleongomez@unbosque.edu.co
   orcid: 0000-0002-0092-6298
 date: 2025-08-12
 date-format: "D [de] MMMM [de] YYYY"
 date-modified: last-modified
 date-modified-format: "D [de] MMMM [de] YYYY"
-version: "v1.1"
+version: "v1.2"
 format:
   html:
     theme: cosmo
@@ -27,12 +27,13 @@ bibliography: marco_unificado_referencias.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/refs/heads/master/apa.csl
 ---
 
-
 ## Introducción
 
 Este documento resume y unifica estrategias cuantitativas y cualitativas/mixtas para justificar tamaños de muestra, integrando el marco de @lakens2022sample para la parte cuantitativa con criterios ampliamente usados en investigación cualitativa y trabajo comunitario.
 
 No pretende ser una revisión exhaustiva de todas las fuentes disponibles, sino destacar referencias de particular relevancia que puedan orientar a las y los investigadores a **decidir**, **aplicar** y **justificar** la estrategia más adecuada según el tipo de estudio y sus objetivos.
+
+En todos los casos, este marco enfatiza que lo fundamental es la transparencia metodológica: incluso cuando no sea posible aplicar una justificación sólida, declarar cómo se decidió el tamaño de muestra sigue siendo esencial.
 
 ```{r setup, include=FALSE}
 library(dplyr)
@@ -75,7 +76,7 @@ cuanti <- tibble::tribble(
   "[@bacchetti2005ethics; @lakens2022sample]",
 
   "Cuantitativo",
-  "Mínimo efecto de interés (SESOI)",
+  "Mínimo Tamaño de Efecto de Interés (SESOI)",
   "Definir el efecto más pequeño de interés y dimensionar para detectarlo con poder suficiente.",
   "Ensayos clínicos; estudios aplicados con implicaciones prácticas.",
   "Declarar y justificar el SESOI; dimensionar para detectarlo (o probar equivalencia).",
@@ -171,15 +172,26 @@ unificado %>%
   tab_source_note(md("**Notas**: Los enlaces dirigen a DOI/URL de cada fuente."))
 ```
 
+::: callout-tip
+### Otras justificaciones posibles
+@lakens2022sample también describe justificaciones menos comunes, como medir a la población entera, o menos deseables, como limitarse por recursos (lo que suele ser comprensible en muchos contextos), o incluso usar reglas heurísticas o no contar con una justificación formal.  
+
+Aunque no se recomiendan como prácticas estándar, es importante **promover la transparencia**: incluso cuando un tamaño de muestra se define solo por reglas generales o carece de justificación, hacerlo explícito ayuda a que lectores y revisores comprendan las decisiones tomadas y sus implicaciones. Como enfatiza @lakens2022sample: *“It should not be surprising that the ‘heuristics’ and ‘no justification’ approaches are often unlikely to impress peers”* —[*“No debería sorprender que los enfoques de ‘heurísticas’ y ‘sin justificación’ difícilmente impresionen a sus pares académicos”*].
+
+**Ninguna opción sustituye la necesidad de argumentar de forma transparente cómo se tomó la decisión sobre el tamaño de muestra**.
+:::
+
 ## Uso sugerido en proyectos
 
 La decisión sobre el tamaño de muestra o la estrategia de selección debe tomarse *a priori*, antes de recolectar datos, y basarse en consideraciones teóricas o metodológicas claras. Dependiendo del tipo de investigación, puede justificarse mediante distintas estrategias:
 
-* **En estudios cuantitativos**, lo ideal es justificar el tamaño a partir del poder estadístico y/o de la precisión de las estimaciones [@lakens2022sample; ver también @cohen1992power; @bonett2002sample; @pocock1977group; @bacchetti2005ethics; @lakens2018equivalence; @button2013power]. En el caso del poder estadístico, esto se hace definiendo un *Mínimo Tamaño de Efecto de Interés (SESOI)* [@lakens2018equivalence]. 
+* **En estudios cuantitativos**, lo más recomendable, por lo general, es justificar el tamaño de muestra a partir del poder estadístico y/o de la precisión de las estimaciones [@lakens2022sample; ver también @cohen1992power; @bonett2002sample; @pocock1977group; @bacchetti2005ethics; @lakens2018equivalence; @button2013power]. En el caso del poder estadístico, esto requiere estimar un tamaño de efecto esperado. Algunas estrategias habituales son problemáticas: por ejemplo, basarse en los estándares genéricos de Cohen (efectos “pequeños”, “medios” o “grandes”) [@correllAvoidCohenSmall2020] o usar el tamaño de efecto de un único estudio previo o de un estudio piloto [@albersWhenPowerAnalyses2018]. Una alternativa más sólida es considerar la distribución de tamaños de efecto en un campo [@quintanaStatisticalConsiderationsReporting2017], aunque lo ideal es definir explícitamente un *Mínimo Tamaño de Efecto de Interés (SESOI)* [@lakens2018equivalence], o, en su defecto, justificar un efecto hipotetizado a partir de la teoría.
 
 * **En estudios cualitativos**, la muestra se justifica principalmente mediante la saturación teórica o de datos, la diversidad de perspectivas y el muestreo intencional guiado por la comunidad [@guest2006saturation; @saunders2018saturation; @patton2015qualitative; @maxwell2013qualitative; @israel2013cbpr; @Hennink2021Sample; @Hearn2022Having; @Pelletier2020Exploring; @Wutich2024Sample; @Zabala2016Bootstrapping; @Flowerree2023Reasoning; @Imaz-Sheinbaum2021PRINCIPLES], con límites definidos por la viabilidad y los compromisos éticos acordados localmente [@who2021ethics; @Robinson2014Sampling; @Farrugia2019WASP; @Taquette2022Ethical]. 
 
 * **En diseños mixtos**, se integran criterios complementarios para garantizar tanto validez estadística como profundidad contextual, articulando poder y precisión con saturación, diversidad y justificación narrativa basada en propósito [@creswell2018mixed; @Teddlie2016Mixed; @Javdani2023Mixed].
+
+Finalmente, si el tamaño de muestra se determinó por limitaciones prácticas o carece de una justificación clara, es fundamental comunicarlo de forma honesta. La transparencia, incluso en estas circunstancias, permite evaluar con realismo el alcance y las limitaciones del estudio [@lakens2022sample].
 
 ::: callout-note
 ## Documento vivo
