@@ -1,5 +1,5 @@
 ---
-title: "Marco unificado para justificar tamaños de muestra en estudios cuantitativos, cualitativos, o mixtos"
+title: "Just-N Framework: Marco unificado para justificar tamaños de muestra en estudios cuantitativos, cualitativos, o mixtos"
 subtitle: "Última actualización: {{< meta date-modified >}} — Versión {{< meta version >}}"
 author: 
   name: "[Juan David Leongómez](https://jdleongomez.info/es/)"
@@ -27,9 +27,14 @@ bibliography: marco_unificado_referencias.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/refs/heads/master/apa.csl
 ---
 
+[![](https://zenodo.org/badge/DOI/10.5281/zenodo.16934469.svg)](https://doi.org/10.5281/zenodo.16934469)
+
 ## Introducción
 
-Este documento resume y unifica estrategias cuantitativas y cualitativas/mixtas para justificar tamaños de muestra, integrando el marco de @lakens2022sample para la parte cuantitativa con criterios ampliamente usados en investigación cualitativa y trabajo comunitario.
+<img src="just-n-logo.svg" alt="Just-N logo" style="width:80px; float:left; margin:0 15px 5px 0;">
+<p>
+Este documento resume y unifica estrategias cuantitativas y cualitativas/mixtas para justificar tamaños de muestra, integrando el marco de Lakens (2022) para la parte cuantitativa con criterios ampliamente usados en investigación cualitativa y trabajo comunitario.
+</p>
 
 No pretende ser una revisión exhaustiva de todas las fuentes disponibles, sino destacar referencias de particular relevancia que puedan orientar a las y los investigadores a **decidir**, **aplicar** y **justificar** la estrategia más adecuada según el tipo de estudio y sus objetivos.
 
@@ -138,29 +143,29 @@ cuali <- tibble::tribble(
 
 unificado <- bind_rows(cuanti, cuali)
 
-unificado %>%
-  arrange(desc(Enfoque)) %>%
-  gt(groupname_col = "Enfoque") %>%
+unificado  |> 
+  arrange(desc(Enfoque)) |>
+  gt(groupname_col = "Enfoque") |>
   tab_header(
     title = md("**Marco unificado de estrategias para justificar tamaños de muestra**"),
     subtitle = "Resumen práctico para estudios cuantitativos, cualitativos y mixtos"
-  ) %>%
-  fmt_markdown(columns = "Referencia / Fuente") %>%
+  ) |>
+  fmt_markdown(columns = "Referencia / Fuente") |>
   cols_width(
     Enfoque ~ pct(12),
     Estrategia ~ pct(18),
     `Cuándo usarla` ~ pct(22),
     `Cómo justificar` ~ pct(28),
     `Referencia / Fuente` ~ pct(20)
-  ) %>%
-  cols_align(align = "left", columns = everything()) %>%
+  ) |>
+  cols_align(align = "left", columns = everything()) |>
   tab_options(
     table.width = pct(100),
     table.font.size = px(15),
     data_row.padding = px(4),
     row_group.padding = px(4),
     heading.padding = px(6)
-  ) %>%
+  ) |>
   # ⬇️ Estilo para los encabezados de grupo
   tab_style(
     style = list(
@@ -168,8 +173,7 @@ unificado %>%
       cell_text(weight = "bold", size = px(16), color = "#003366") # texto más grande y oscuro
     ),
     locations = cells_row_groups()
-  ) %>%
-  tab_source_note(md("**Notas**: Los enlaces dirigen a DOI/URL de cada fuente."))
+  )
 ```
 
 ::: callout-tip

@@ -3,9 +3,11 @@ project:
   output-dir: docs   # GitHub Pages publicará desde /docs
 
 website:
+  favicon: just-n-logo.png
   title: "Just-N Framework"
   navbar:
     style: tab
+    logo: just-n-logo.svg
     left:
       - text: "Español"
         href: index.qmd

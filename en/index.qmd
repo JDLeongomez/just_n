@@ -1,5 +1,5 @@
 ---
-title: "Unified framework to justify sample sizes in quantitative, qualitative, and mixed-methods studies"
+title: "Just-N Framework: Unified framework to justify sample sizes in quantitative, qualitative, and mixed-methods studies"
 subtitle: "Last updated: {{< meta date-modified >}} — Version {{< meta version >}}"
 author: 
   name: "[Juan David Leongómez](https://jdleongomez.info/es/)"
@@ -27,9 +27,14 @@ bibliography: ../marco_unificado_referencias.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/refs/heads/master/apa.csl
 ---
 
+[![](https://zenodo.org/badge/DOI/10.5281/zenodo.16934469.svg)](https://doi.org/10.5281/zenodo.16934469)
+
 ## Introduction
 
+<img src="../just-n-logo.svg" alt="Just-N logo" style="width:80px; float:left; margin:0 15px 5px 0;">
+<p>
 This document summarises and unifies quantitative and qualitative/mixed-method strategies for justifying sample sizes, integrating the framework of @lakens2022sample for the quantitative part with criteria widely used in qualitative research and community-based work.
+</p>
 
 It is not intended to be an exhaustive review of all available sources, but rather to highlight references of particular relevance that can guide researchers to **decide**, **apply**, and **justify** the most appropriate strategy depending on the type of study and its objectives.
 
@@ -138,29 +143,29 @@ cuali <- tibble::tribble(
 
 unificado <- bind_rows(cuanti, cuali)
 
-unificado %>%
-  arrange(desc(Approach)) %>%
-  gt(groupname_col = "Approach") %>%
+unificado |>
+  arrange(desc(Approach)) |>
+  gt(groupname_col = "Approach") |>
   tab_header(
     title = md("**Unified framework of strategies for justifying sample sizes**"),
     subtitle = "Practical summary for quantitative, qualitative, and mixed-methods studies"
-  ) %>%
-  fmt_markdown(columns = "Reference / Source") %>%
+  ) |>
+  fmt_markdown(columns = "Reference / Source") |>
   cols_width(
     Approach ~ pct(12),
     Strategy ~ pct(18),
     `When to use` ~ pct(22),
     `How to justify` ~ pct(28),
     `Reference / Source` ~ pct(20)
-  ) %>%
-  cols_align(align = "left", columns = everything()) %>%
+  ) |>
+  cols_align(align = "left", columns = everything()) |>
   tab_options(
     table.width = pct(100),
     table.font.size = px(15),
     data_row.padding = px(4),
     row_group.padding = px(4),
     heading.padding = px(6)
-  ) %>%
+  ) |>
   # ⬇️ Style for group headers
   tab_style(
     style = list(
@@ -168,7 +173,7 @@ unificado %>%
       cell_text(weight = "bold", size = px(16), color = "#003366")
     ),
     locations = cells_row_groups()
-  ) %>%
+  ) |>
   tab_source_note(md("**Notes**: Links point to DOI/URL of each source."))
 ```
 
