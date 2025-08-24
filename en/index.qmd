@@ -3,7 +3,7 @@ title: "Just-N Framework: Unified framework to justify sample sizes in quantitat
 subtitle: "Last updated: {{< meta date-modified >}} — Version {{< meta version >}}"
 author: 
   name: "[Juan David Leongómez](https://jdleongomez.info/es/)"
-  affiliation:  "[EvoCo: Human Behaviour and Evolution Lab](https://jdleongomez.info/es/team/) | [CODEC: Cognitive and Behavioural Sciences](https://unbosque.portalinvestigacion.com/grupos/302) | [Faculty of Psychology](https://www.unbosque.edu.co/psicologia) | [Universidad El Bosque](https://www.unbosque.edu.co/)"
+  affiliation:  "[EvoCo: Human Behaviour and Evolution Lab](https://jdleongomez.info/en/team/) | [CODEC: Cognitive and Behavioural Sciences](https://unbosque.portalinvestigacion.com/grupos/302) | [Faculty of Psychology](https://www.unbosque.edu.co/psicologia) | [Universidad El Bosque](https://www.unbosque.edu.co/)"
   email: jleongomez@unbosque.edu.co
   orcid: 0000-0002-0092-6298
 date: 2025-08-12
