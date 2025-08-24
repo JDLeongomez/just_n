@@ -7,9 +7,9 @@ author:
   email: jleongomez@unbosque.edu.co
   orcid: 0000-0002-0092-6298
 date: 2025-08-12
-date-format: "D [de] MMMM [de] YYYY"
+date-format: "D MMMM YYYY"
 date-modified: last-modified
-date-modified-format: "D [de] MMMM [de] YYYY"
+date-modified-format: "D MMMM YYYY"
 version: "v1.2"
 format:
   html:

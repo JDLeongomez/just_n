@@ -16,6 +16,7 @@ website:
 
 format:
   html:
+    include-in-header: umami.html
     theme: cosmo
     toc: true
     toc-depth: 2
