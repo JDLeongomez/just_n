@@ -10,7 +10,6 @@ date: 2025-08-12
 date-format: "D [de] MMMM [de] YYYY"
 date-modified: last-modified
 date-modified-format: "D [de] MMMM [de] YYYY"
-version: "v1.2"
 format:
   html:
     theme: cosmo
@@ -23,7 +22,7 @@ execute:
   echo: false
   warning: false
   message: false
-bibliography: marco_unificado_referencias.bib
+bibliography: refs.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/refs/heads/master/apa.csl
 ---
 
@@ -57,7 +56,7 @@ cuanti <- tibble::tribble(
   "Determinar el tamaño necesario para alcanzar un poder (p. ej., 80%) dado un tamaño de efecto esperado y α.",
   "Estudios confirmatorios; pruebas de hipótesis clásicas.",
   "Reportar cálculo con parámetros (α, poder, tamaño de efecto) y el software utilizado.",
-  "[@cohen1992power; @lakens2022sample]",
+  "[@cohen1992power; @lakens2022sample; @leongomezAnalisisPoderEstadistico2020; @leongomezPoderEstadisticoTamano2020]",
 
   "Cuantitativo",
   "Precisión de estimaciones",
@@ -189,7 +188,7 @@ Aunque no se recomiendan como prácticas estándar, es importante **promover la 
 
 La decisión sobre el tamaño de muestra o la estrategia de selección debe tomarse *a priori*, antes de recolectar datos, y basarse en consideraciones teóricas o metodológicas claras. Dependiendo del tipo de investigación, puede justificarse mediante distintas estrategias:
 
-* **En estudios cuantitativos**, lo más recomendable, por lo general, es justificar el tamaño de muestra a partir del poder estadístico y/o de la precisión de las estimaciones [@lakens2022sample; ver también @cohen1992power; @bonett2002sample; @pocock1977group; @bacchetti2005ethics; @lakens2018equivalence; @button2013power]. En el caso del poder estadístico, esto requiere estimar un tamaño de efecto esperado. Algunas estrategias habituales son problemáticas: por ejemplo, basarse en los estándares genéricos de Cohen (efectos “pequeños”, “medios” o “grandes”) [@correllAvoidCohenSmall2020] o usar el tamaño de efecto de un único estudio previo o de un estudio piloto [@albersWhenPowerAnalyses2018]. Una alternativa más sólida es considerar la distribución de tamaños de efecto en un campo [@quintanaStatisticalConsiderationsReporting2017], aunque lo ideal es definir explícitamente un *Mínimo Tamaño de Efecto de Interés (SESOI)* [@lakens2018equivalence], o, en su defecto, justificar un efecto hipotetizado a partir de la teoría.
+* **En estudios cuantitativos**, lo más recomendable, por lo general, es justificar el tamaño de muestra a partir del poder estadístico y/o de la precisión de las estimaciones [@lakens2022sample; ver también @cohen1992power; @bonett2002sample; @pocock1977group; @bacchetti2005ethics; @lakens2018equivalence; @button2013power]. En el caso del poder estadístico, esto requiere estimar un tamaño de efecto esperado [@leongomezAnalisisPoderEstadistico2020; @leongomezPoderEstadisticoTamano2020]. Algunas estrategias habituales son problemáticas: por ejemplo, basarse en los estándares genéricos de Cohen (efectos “pequeños”, “medios” o “grandes”) [@correllAvoidCohenSmall2020] o usar el tamaño de efecto de un único estudio previo o de un estudio piloto [@albersWhenPowerAnalyses2018]. Una alternativa más sólida es considerar la distribución de tamaños de efecto en un campo [@quintanaStatisticalConsiderationsReporting2017], aunque lo ideal es definir explícitamente un *Mínimo Tamaño de Efecto de Interés (SESOI)* [@lakens2018equivalence], o, en su defecto, justificar un efecto hipotetizado a partir de la teoría.
 
 * **En estudios cualitativos**, la muestra se justifica principalmente mediante la saturación teórica o de datos, la diversidad de perspectivas y el muestreo intencional guiado por la comunidad [@guest2006saturation; @saunders2018saturation; @patton2015qualitative; @maxwell2013qualitative; @israel2013cbpr; @Hennink2021Sample; @Hearn2022Having; @Pelletier2020Exploring; @Wutich2024Sample; @Zabala2016Bootstrapping; @Flowerree2023Reasoning; @Imaz-Sheinbaum2021PRINCIPLES], con límites definidos por la viabilidad y los compromisos éticos acordados localmente [@who2021ethics; @Robinson2014Sampling; @Farrugia2019WASP; @Taquette2022Ethical]. 
 
@@ -203,3 +202,13 @@ Finalmente, si el tamaño de muestra se determinó por limitaciones prácticas o
 Este es un documento **vivo** que puede ser actualizado o refinado con el tiempo.  
 Si encuentras errores, tienes bibliografía pertinente o cualquier sugerencia de mejora, por favor escríbeme a <jleongomez@unbosque.edu.co>.
 :::
+
+<div style="font-size: small;">
+
+## Cómo citar
+
+Si utilizas **Just-N Framework** en tu trabajo, por favor cítalo así:
+
+> Leongómez, J. D. (2025). *Just-N Framework: Marco unificado para justificar tamaños de muestra en estudios cuantitativos, cualitativos y mixtos* ({{< meta version >}}). Zenodo. [https://doi.org/10.5281/zenodo.16934469](https://doi.org/10.5281/zenodo.16934469)
+
+</div>

@@ -10,7 +10,6 @@ date: 2025-08-12
 date-format: "D MMMM YYYY"
 date-modified: last-modified
 date-modified-format: "D MMMM YYYY"
-version: "v1.2"
 format:
   html:
     theme: cosmo
@@ -23,7 +22,7 @@ execute:
   echo: false
   warning: false
   message: false
-bibliography: ../marco_unificado_referencias.bib
+bibliography: ../refs.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles-distribution/refs/heads/master/apa.csl
 ---
 
@@ -57,7 +56,7 @@ cuanti <- tibble::tribble(
   "Determine the required sample size to reach a given power (e.g., 80%) for an expected effect size and α.",
   "Confirmatory studies; classical hypothesis testing.",
   "Report calculation with parameters (α, power, effect size) and the software used.",
-  "[@cohen1992power; @lakens2022sample]",
+  "[@cohen1992power; @lakens2022sample; @leongomezAnalisisPoderEstadistico2020; @leongomezPoderEstadisticoTamano2020]",
 
   "Quantitative",
   "Precision of estimates",
@@ -190,7 +189,7 @@ Although they are not recommended as standard practice, it is important to promo
 
 The decision about sample size or the selection strategy should be taken *a priori*, before collecting data, and be based on clear theoretical or methodological considerations. Depending on the type of research, it can be justified through different strategies:
 
-* **In quantitative studies**, in most cases the most advisable approach is to justify the sample size through statistical power and/or precision of estimates [@lakens2022sample; see also @cohen1992power; @bonett2002sample; @pocock1977group; @bacchetti2005ethics; @lakens2018equivalence; @button2013power]. For statistical power, this requires estimating an expected effect size. Some common strategies are problematic: for example, relying on Cohen’s generic standards (“small”, “medium”, or “large” effects) [@correllAvoidCohenSmall2020], or using the effect size of a single previous study or a pilot study [@albersWhenPowerAnalyses2018]. A more robust alternative is to consider the distribution of effect sizes in a field [@quintanaStatisticalConsiderationsReporting2017], although ideally one should explicitly define a *Smallest Effect Size of Interest* (SESOI) [@lakens2018equivalence], or, failing that, justify a hypothesised effect based on theory.
+* **In quantitative studies**, in most cases the most advisable approach is to justify the sample size through statistical power and/or precision of estimates [@lakens2022sample; see also @cohen1992power; @bonett2002sample; @pocock1977group; @bacchetti2005ethics; @lakens2018equivalence; @button2013power]. For statistical power, this requires estimating an expected effect size [@leongomezAnalisisPoderEstadistico2020; @leongomezPoderEstadisticoTamano2020]. Some common strategies are problematic: for example, relying on Cohen’s generic standards (“small”, “medium”, or “large” effects) [@correllAvoidCohenSmall2020], or using the effect size of a single previous study or a pilot study [@albersWhenPowerAnalyses2018]. A more robust alternative is to consider the distribution of effect sizes in a field [@quintanaStatisticalConsiderationsReporting2017], although ideally one should explicitly define a *Smallest Effect Size of Interest* (SESOI) [@lakens2018equivalence], or, failing that, justify a hypothesised effect based on theory.
 
 * **In qualitative studies**, the sample is mainly justified by theoretical/data saturation, diversity of perspectives, and community-guided purposive sampling [@guest2006saturation; @saunders2018saturation; @patton2015qualitative; @maxwell2013qualitative; @israel2013cbpr; @Hennink2021Sample; @Hearn2022Having; @Pelletier2020Exploring; @Wutich2024Sample; @Zabala2016Bootstrapping; @Flowerree2023Reasoning; @Imaz-Sheinbaum2021PRINCIPLES], with limits defined by feasibility and locally agreed ethical commitments [@who2021ethics; @Robinson2014Sampling; @Farrugia2019WASP; @Taquette2022Ethical].
 
@@ -204,3 +203,13 @@ Finally, if the sample size was determined by practical limitations or lacks a c
 This is a **living** document that may be updated or refined over time.
 If you find errors, have relevant literature, or any suggestions for improvement, please write to me at <jleongomez@unbosque.edu.co>.
 :::
+
+<div style="font-size: small;">
+
+## How to cite
+
+If you use the **Just-N Framework** in your work, please cite it as:
+
+> Leongómez, J. D. (2025). *Just-N Framework: Unified framework to justify sample sizes in quantitative, qualitative, and mixed-methods studies* ({{< meta version >}}). Zenodo. [https://doi.org/10.5281/zenodo.16934469](https://doi.org/10.5281/zenodo.16934469)
+
+</div>
